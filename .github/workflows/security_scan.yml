@@ -15,8 +15,3 @@ jobs:
         uses: reviewdog/action-tfsec@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          working_directory: "sandbox/terraform"
-          reporter: github-pr-review
-          fail_on_error: "true"
-          filter_mode: "nofilter"
-          level: "warning"
