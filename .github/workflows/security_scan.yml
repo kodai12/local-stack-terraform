@@ -1,10 +1,6 @@
 name: security scan
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
+on: [pull_request]
 
 jobs:
   tfsec:
@@ -18,7 +14,4 @@ jobs:
       - name: Terraform security scan
         uses: reviewdog/action-tfsec@master
         with:
-          github_token: ${{ secrets.github_token }}
-          reporter: github-pr-review
-          fail_on_error: "true"
-          filter_mode: "nofilter"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
